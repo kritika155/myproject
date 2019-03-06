@@ -19,7 +19,22 @@ selectedEmployee=Employee;
   onSelect(employee: Employee): void {
     this.selectedEmployee=employee;
   }
-  
+  addempl(selectedEmployee)
+  {
+    this.selectedEmployee=this.employee;
+    this.selectedEmployee.id=this.employees.length+1;
+    this.employees.push(this.employee);
+    this.employee={
+    "id":0,
+    "name":"",
+    "organization":"",
+    "salary":0
+  }
+  }
+  removeit(this)
+  {
+    this.employees.splice(this,1);
+  }
   constructor() { }
 
   ngOnInit() {

@@ -7,6 +7,7 @@
         |<span> {{i.name}}</span>
         |<span> {{i.organization}}</span>
         |<span> {{i.salary}}</span>
+        <button name="delete" (click)="removeit(i)">X</button>
         </li>
     </ul>
     </div>
@@ -18,7 +19,14 @@
       <label>name:
         <input [(ngModel)]="selectedEmployee.name" placeholder="name">
       </label>
-      <input type="button" value="add" (click)="add()" name="add">
+      <label>organization:
+          <input [(ngModel)]="selectedEmployee.organization" placeholder="organization">
+        </label>
+        <label>salary:
+            <input [(ngModel)]="selectedEmployee.salary" placeholder="salary">
+          </label>
+          
+      <input type="button" value="add" (click)="addempl(selectedEmployee)" name="add">
     </div>
   
   </div>
