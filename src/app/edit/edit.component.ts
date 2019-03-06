@@ -19,7 +19,7 @@ selectedEmployee=Employee;
   onSelect(employee: Employee): void {
     this.selectedEmployee=employee;
   }
-  addempl(selectedEmployee)
+  addemployee(selectedEmployee)
   {
     this.selectedEmployee=this.employee;
     this.selectedEmployee.id=this.employees.length+1;
