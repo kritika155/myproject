@@ -1,0 +1,19 @@
+.text-greenyellow{
+    color: greenyellow;
+    
+}
+table{
+    border-collapse: collapse;
+    float: left;
+}
+.log{
+    float: right;
+    
+}
+.log ul{
+    list-style-type:none;
+}
+.inn input[type="text"],input[type="button"]{
+    float:left;
+    display: block;
+}

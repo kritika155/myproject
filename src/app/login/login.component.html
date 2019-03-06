@@ -1,0 +1,55 @@
+<menu></menu>
+{{a}}
+<hr>
+<div class="inn">
+<input type="text" [(ngModel)]="employee.name" placeholder="name">
+
+<input type="text" [(ngModel)]="employee.organization" placeholder="organization">
+
+<input type="text" [(ngModel)]="employee.salary" placeholder="salary">
+
+<input type="button" (click)="addemployee()" value="add employee" name="add">
+<input type="text" [(ngModel)]="num" placeholder="id" name="idd"> 
+<input type="button" (click)="deleteemployee(num)" value="delete employee" name="delete">
+</div>
+<div class="log">
+<ul class="heroes">
+    <h2>My Employees</h2>
+  <li *ngFor="let i of employees">
+     
+    <span class="badge">{{i.id}}</span>
+    |<span> {{i.name}}</span>
+    |<span> {{i.organization}}</span>
+    |<span> {{i.salary}}</span>
+    <button type="button" (click)="delete(i)">Delete(X)</button>
+    </li>
+</ul>
+</div>
+<div style="text-align:center">
+<h2 class="text-greenyellow">Employee List</h2>
+<table border="1" align="center">
+  <thead>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Organization</th>
+    <th>Salary</th>
+    <th>Action</th>
+  </thead>
+  <tbody>
+    <td contenteditable="true">{{employee.id}}</td>
+    <td>{{employee.name}}</td>
+    <td>{{employee.organization}}</td>
+    <td>{{employee.salary}}</td>
+    <td></td>
+  </tbody>
+</table>
+<label>name:
+  <input [(ngModel)]="employee.name" placeholder="name">
+  <input type="button" (click)="add()" name="add" value="add">
+</label>
+</div>
+{{a}}
+
+<router-outlet></router-outlet>
+
+
