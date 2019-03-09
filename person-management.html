@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <title>person-management system</title>
+        <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    </head>
+    <body>
+       <form>
+        
+        <button type="button" onclick="deleteLastPerson()" >DELETE LAST PERSON</button> | <button type="button" onclick="showPerson()">SHOW PERSON</button> |     <button type="button" onclick="deleteallPerson()">DELETE ALL PERSON</button>
+        <hr>
+        <input type="text" value="" placeholder="enter id" name="id1" required><br></br>
+        <input type="text" value="" placeholder="enter name" name="name2" required><br></br>
+        <input type="text" value="" placeholder="enter email" name="email" required><br></br>
+        <input type="text" value="" placeholder="enter phone" name="phone" required><br></br>
+        <input type="text" value="" placeholder="enter address" name="address" required><br></br>
+        
+        <input type="button" onclick="addPerson(name2.value,email.value,id1.value,phone.value,address.value)" value="ADD PERSON"></button>
+    </form>
+    <script>
+            getPerson=function(){
+                var personList=[];
+             if(localStorage.getItem('persons')!=null){
+           personList=JSON.parse(localStorage.getItem('persons'));
+   }
+  return personList;
+  }
+  addPerson=function(name,email,id,phone,address){
+      
+      var personList=getPerson();
+     var person={};
+    person.name=name;
+    person.email=email;
+    person.id=id;
+    person.phone=phone;
+    person.address=address;
+    personList.push(person);
+   localStorage.setItem('persons',JSON.stringify(personList));
+   console.log('id:'+id);
+   console.log('name:'+name);
+   console.log('email:'+email);
+   console.log('phone:'+phone);
+   console.log('address:'+address);
+    
+    }
+    
+    deleteallPerson=function(){
+       localStorage.clear('persons');
+    }
+    showPerson=function(){
+        var personList=getPerson();
+        for(var i=0;i<personList.length;i++){
+           <span></span>
+        }
+        console.log("total persons:"+personList.length);
+        if(personList.length>0){
+            console.log(personList.length);
+            console.log("id|Name|Email|Phone|Address");
+            for(var i=0;i<personList.length;i++){
+                
+
+                console.log(personList[i].id,personList[i].name,personList[i].email,personList[i].phone,personList[i].address)
+            }
+  
+        }
+        }
+        deleteLastPerson=function(){
+            var personList=getPerson();
+            personList.pop();
+            localStorage.setItem('persons',JSON.stringify(personList));
+  
+        }
+  
+              </script>
+    </body>
+</html>
